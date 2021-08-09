@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
 
@@ -51,8 +52,17 @@ public class WordFrequencyGame {
     }
 
     private List<WordInfo> calculateWordCount_Temp(String inputString) {
-        List<WordInfo> wordInfoList = new ArrayList<>();
-        return wordInfoList;
+        List<String>words = Arrays.asList(inputString.split(BLANK_SPACES));
+        List<String> distinctWords = words.stream().distinct().collect(Collectors.toList());
+        List<WordInfo> wordInfos = new ArrayList<>();
+
+        for (String word : distinctWords) {
+            int wordCount = Collections.frequency(words, word);
+            WordInfo wordInfo = new WordInfo(word, wordCount);
+            wordInfos.add(wordInfo);
+        }
+        wordInfos.sort((firstWord, secondWord) -> secondWord.getWordCount() - firstWord.getWordCount());
+        return wordInfos;
     }
 
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> wordInfoList) {
