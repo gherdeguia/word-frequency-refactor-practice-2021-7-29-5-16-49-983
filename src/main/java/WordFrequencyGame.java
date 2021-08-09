@@ -7,15 +7,11 @@ public class WordFrequencyGame {
     private static final String NEW_LINE = "\n";
 
     public String getResult(String inputString) {
-        if (inputString.split(BLANK_SPACES).length == 1) {
-            return inputString + " 1";
-        } else {
-            try {
-                List<WordInfo> wordInfoList = calculateWordCount(inputString);
-                return generateWordCountString(wordInfoList);
-            } catch (Exception e) {
-                return "Calculate Error";
-            }
+        try {
+            List<WordInfo> wordInfoList = calculateWordCount(inputString);
+            return generateWordCountString(wordInfoList);
+        } catch (Exception e) {
+            return "Calculate Error";
         }
     }
 
