@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 public class WordFrequencyGame {
 
     private static final String BLANK_SPACES = "\\s+";
+    private static final String NEW_LINE = "\n";
 
     public String getResult(String inputString) {
         if (inputString.split(BLANK_SPACES).length == 1) {
@@ -19,7 +20,7 @@ public class WordFrequencyGame {
     }
 
     private String generateWordCountString(List<WordInfo> wordInfoList) {
-        StringJoiner joiner = new StringJoiner("\n");
+        StringJoiner joiner = new StringJoiner(NEW_LINE);
         for (WordInfo w : wordInfoList) {
             String s = w.getValue() + " " + w.getWordCount();
             joiner.add(s);
