@@ -8,15 +8,10 @@ public class WordFrequencyGame {
         if (inputString.split(BLANK_SPACES).length == 1) {
             return inputString + " 1";
         } else {
-
             try {
-
                 List<WordInfo> wordInfoList = calculateWordCount(inputString);
-
                 return generateWordCountString(wordInfoList);
             } catch (Exception e) {
-
-
                 return "Calculate Error";
             }
         }
@@ -55,7 +50,6 @@ public class WordFrequencyGame {
         return wordInfoList;
     }
 
-
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> wordInfoList) {
         Map<String, List<WordInfo>> map = new HashMap<>();
         for (WordInfo wordInfo : wordInfoList) {
@@ -68,10 +62,6 @@ public class WordFrequencyGame {
                 map.get(wordInfo.getValue()).add(wordInfo);
             }
         }
-
-
         return map;
     }
-
-
 }
