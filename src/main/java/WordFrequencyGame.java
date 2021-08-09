@@ -50,6 +50,11 @@ public class WordFrequencyGame {
         return wordInfoList;
     }
 
+    private List<WordInfo> calculateWordCount_Temp(String inputString) {
+        List<WordInfo> wordInfoList = new ArrayList<>();
+        return wordInfoList;
+    }
+
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> wordInfoList) {
         Map<String, List<WordInfo>> map = new HashMap<>();
         for (WordInfo wordInfo : wordInfoList) {
