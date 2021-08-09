@@ -4,16 +4,15 @@ public class WordFrequencyGame {
 
     private static final String BLANK_SPACES = "\\s+";
 
-    public String getResult(String inputStr) {
-
-        if (inputStr.split(BLANK_SPACES).length == 1) {
-            return inputStr + " 1";
+    public String getResult(String inputString) {
+        if (inputString.split(BLANK_SPACES).length == 1) {
+            return inputString + BLANK_SPACES;
         } else {
 
             try {
 
                 //split the input string with 1 to n pieces of spaces
-                String[] arr = inputStr.split(BLANK_SPACES);
+                String[] arr = inputString.split(BLANK_SPACES);
 
                 List<WordInfo> wordInfoList = new ArrayList<>();
                 for (String s : arr) {
