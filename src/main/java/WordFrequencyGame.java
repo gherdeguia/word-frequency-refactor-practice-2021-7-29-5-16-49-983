@@ -19,11 +19,11 @@ public class WordFrequencyGame {
         }
     }
 
-    private String generateWordCountString(List<WordInfo> wordInfoList) {
+    private String generateWordCountString(List<WordInfo> wordInfos) {
         StringJoiner joiner = new StringJoiner(NEW_LINE);
-        for (WordInfo w : wordInfoList) {
-            String s = w.getValue() + " " + w.getWordCount();
-            joiner.add(s);
+        for (WordInfo word : wordInfos) {
+            String sentence = String.format("%s %d",word.getValue(),word.getWordCount());
+            joiner.add(sentence);
         }
         return joiner.toString();
     }
