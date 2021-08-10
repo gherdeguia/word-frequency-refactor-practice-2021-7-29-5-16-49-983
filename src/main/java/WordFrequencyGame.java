@@ -3,6 +3,7 @@ import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
 
+    public static final String CALCULATE_ERROR = "Calculate Error";
     private static final String BLANK_SPACES = "\\s+";
     private static final String NEW_LINE = "\n";
 
@@ -11,7 +12,7 @@ public class WordFrequencyGame {
             List<WordInfo> wordInfoList = calculateWordCount(inputString);
             return generateWordCountString(wordInfoList);
         } catch (Exception e) {
-            return "Calculate Error";
+            return CALCULATE_ERROR;
         }
     }
 
